@@ -9,6 +9,7 @@
                 <a href="{{ route('posts.create') }}" class="btn btn-primary mb-3">Add New Post</a>
                 <table class="table table-bordered table-hover">
                     <thead class="table-dark">
+                    
                         <tr>
                             <th>ID</th>
                             <th>Name</th>

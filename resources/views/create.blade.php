@@ -17,6 +17,7 @@
                         <textarea class="form-control" id="body" name="body" rows="3" placeholder="Enter post body"></textarea>
                     </div>
                     <div class="mb-3">
+       
                         <label for="image" class="form-label">Image</label>
                         <input type="file" name="image" class="form-control" id="image"
                             placeholder="Enter post image">
