@@ -9,18 +9,24 @@
                     @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" name="name" id="name"
-                            placeholder="Enter post name">
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" value="{{ old('name') }}" placeholder="Enter post name">
+                        @error('name')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="body" class="form-label">Body</label>
-                        <textarea class="form-control" id="body" name="body" rows="3" placeholder="Enter post body"></textarea>
+                        <textarea class="form-control @error('body') is-invalid @enderror" id="body" name="body" rows="3" placeholder="Enter post body">{{ old('body') }}</textarea>
+                        @error('body')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="mb-3">
-       
                         <label for="image" class="form-label">Image</label>
-                        <input type="file" name="image" class="form-control" id="image"
-                            placeholder="Enter post image">
+                        <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="image">
+                        @error('image')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-primary">Add Post</button>
                     <a href="{{ route('posts.index') }}" class="btn btn-secondary">Cancel</a>

@@ -11,21 +11,27 @@
                     @csrf
                     @method('PATCH')
 
-                    
-
                     <div class="mb-3">
                         <label for="editName" class="form-label">Name</label>
-                  
-                        <input type="text" class="form-control" name="name" id="editName"
-                            value="{{ $post->name }}">
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="editName"
+                            value="{{ old('name', $post->name) }}">
+                        @error('name')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="editBody" class="form-label">Body</label>
-                        <textarea class="form-control" id="editBody" name="body" rows="3" value="{{ $post->body }}"></textarea>
+                        <textarea class="form-control @error('body') is-invalid @enderror" id="editBody" name="body" rows="3">{{ old('body', $post->body) }}</textarea>
+                        @error('body')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="editImage" class="form-label">Image</label>
-                        <input type="file" class="form-control" id="editImage" name="image">
+                        <input type="file" class="form-control @error('image') is-invalid @enderror" id="editImage" name="image">
+                        @error('image')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-warning">Update Post</button>
                     <a href="{{ route('posts.index') }}" class="btn btn-secondary">Cancel</a>
