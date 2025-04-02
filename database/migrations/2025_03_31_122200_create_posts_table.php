@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('body');
             $table->string('image')->nullable()->change();
             $table->timestamps();
-            
+        
         });
     }
 
