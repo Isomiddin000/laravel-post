@@ -14,6 +14,7 @@
         @endif
 
         
+
         <div class="post-details text-center">
             <h1 class="created-updated">Created At: {{ $post->created_at->format('Y-m-d H:i') }}</h1>
             <h1 class="created-updated">Updated At: {{ $post->updated_at->format('Y-m-d H:i') }}</h1>
